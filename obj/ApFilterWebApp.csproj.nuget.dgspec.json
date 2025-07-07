@@ -49,6 +49,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "NPOI": {
+              "target": "Package",
+              "version": "[2.7.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

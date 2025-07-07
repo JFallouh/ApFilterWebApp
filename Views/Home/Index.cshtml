@@ -1,8 +1,43 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "AP Export Filter";
+    string defaultDest = @"\\fs01\Accounting\AP\TM_AP_EXPORT\";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h2>AP Export Filter</h2>
+
+@if (ViewBag.Message != null)
+{
+    <div class="alert alert-success">@ViewBag.Message</div>
+}
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger">@ViewBag.Error</div>
+}
+
+<form asp-action="Index" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+        <label for="sourceFile" class="form-label">Source Excel (optional)</label>
+        <input type="file" name="sourceFile" id="sourceFile"
+               accept=".xls" class="form-control" />
+        <div class="form-text">
+            Defaults to network share if none selected:<br/>
+            \\fs01\Accounting\AP\RL_NEW_PAYABLES_TLC_TM.XLS
+        </div>
+        @* <button type="button" class="btn btn-secondary btn-sm mt-1"
+                onclick="document.getElementById('sourceFile').value = ''">
+            Reset Source
+        </button> *@
+    </div>
+
+    <div class="mb-3">
+        <label for="destinationFolder" class="form-label">Destination Folder</label>
+        <input type="text" name="destinationFolder" id="destinationFolder"
+               value="@defaultDest" class="form-control" />
+        @* <button type="button" class="btn btn-secondary btn-sm mt-1"
+                onclick="document.getElementById('destinationFolder').value='@defaultDest'">
+            Reset Destination
+        </button> *@
+    </div>
+
+    <button type="submit" class="btn btn-primary">Generate Files</button>
+</form>

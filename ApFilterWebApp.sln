@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApFilterWebApp", "ApFilterWebApp.csproj", "{36BE952E-EEF7-FF79-D3AD-83AB51CCF98B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{36BE952E-EEF7-FF79-D3AD-83AB51CCF98B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36BE952E-EEF7-FF79-D3AD-83AB51CCF98B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36BE952E-EEF7-FF79-D3AD-83AB51CCF98B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36BE952E-EEF7-FF79-D3AD-83AB51CCF98B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {396D1772-423F-47D5-B237-A4BAAB2D8201}
+	EndGlobalSection
+EndGlobal

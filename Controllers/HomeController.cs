@@ -1,31 +1,32 @@
-using System.Diagnostics;
+// Created by James Fallouh
+// Date: 2025-07-07
+
 using Microsoft.AspNetCore.Mvc;
-using ApFilterWebApp.Models;
+using ApFilterWebApp.Services;
 
-namespace ApFilterWebApp.Controllers;
-
-public class HomeController : Controller
+namespace ApFilterWebApp.Controllers
 {
-    private readonly ILogger<HomeController> _logger;
-
-    public HomeController(ILogger<HomeController> logger)
+    public class HomeController : Controller
     {
-        _logger = logger;
-    }
+        private readonly ExcelFilterService _svc;
+        public HomeController(ExcelFilterService svc) => _svc = svc;
 
-    public IActionResult Index()
-    {
-        return View();
-    }
+        [HttpGet]
+        public IActionResult Index() => View();
 
-    public IActionResult Privacy()
-    {
-        return View();
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        [HttpPost]
+        public IActionResult Index(IFormFile? sourceFile, string? destinationFolder)
+        {
+            try
+            {
+                _svc.Process(sourceFile?.OpenReadStream(), destinationFolder);
+                ViewBag.Message = "Files generated successfully.";
+            }
+            catch (Exception ex)
+            {
+                ViewBag.Error = ex.Message;
+            }
+            return View();
+        }
     }
 }
