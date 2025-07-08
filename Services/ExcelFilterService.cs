@@ -7,7 +7,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using NPOI.HSSF.UserModel;
@@ -179,7 +178,6 @@ namespace ApFilterWebApp.Services
                     if (sc == null) continue;
 
                     var dc = dRow.CreateCell(c, sc.CellType);
-                    // copy value
                     switch (sc.CellType)
                     {
                         case CellType.String:  dc.SetCellValue(sc.StringCellValue);  break;
@@ -189,14 +187,12 @@ namespace ApFilterWebApp.Services
                         default:               dc.SetCellValue(sc.ToString());      break;
                     }
 
-                    // copy & cache style
                     var si = sc.CellStyle.Index;
                     if (!styleMap.TryGetValue(si, out var dstStyle))
                     {
                         dstStyle = destWb.CreateCellStyle();
                         dstStyle.CloneStyleFrom(sc.CellStyle);
 
-                        // clone font
                         var sfi = sc.CellStyle.FontIndex;
                         if (!fontMap.TryGetValue(sfi, out var dfi))
                         {

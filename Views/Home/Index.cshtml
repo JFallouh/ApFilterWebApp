@@ -23,20 +23,20 @@
             Defaults to network share if none selected:<br/>
             \\fs01\Accounting\AP\RL_NEW_PAYABLES_TLC_TM.XLS
         </div>
-        @* <button type="button" class="btn btn-secondary btn-sm mt-1"
+        <button type="button" class="btn btn-secondary btn-sm mt-1"
                 onclick="document.getElementById('sourceFile').value = ''">
             Reset Source
-        </button> *@
+        </button>
     </div>
 
     <div class="mb-3">
         <label for="destinationFolder" class="form-label">Destination Folder</label>
         <input type="text" name="destinationFolder" id="destinationFolder"
                value="@defaultDest" class="form-control" />
-        @* <button type="button" class="btn btn-secondary btn-sm mt-1"
+        <button type="button" class="btn btn-secondary btn-sm mt-1"
                 onclick="document.getElementById('destinationFolder').value='@defaultDest'">
             Reset Destination
-        </button> *@
+        </button>
     </div>
 
     <button type="submit" class="btn btn-primary">Generate Files</button>

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ApFilterWebApp")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1ac251cf74c03a03ba40a7d68401c2bb132b866a")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4e9c2ac1654aecaf6ed7e019a263bbeea8f7e827")]
 [assembly: System.Reflection.AssemblyProductAttribute("ApFilterWebApp")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ApFilterWebApp")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
